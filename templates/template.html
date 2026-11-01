@@ -17,14 +17,16 @@
   .v { display:none; } body[data-v="A"] .vA, body[data-v="B"] .vB, body[data-v="C"] .vC, body[data-v="D"] .vD { display:block; }
 
   /* ---------- A: bottom bar ---------- */
-  .vA .title { position:absolute; right:40px; top:40px; display:flex; flex-direction:column; align-items:flex-end; gap:10px; }
-  .vA .t1 { background:var(--k); color:#fff; font-weight:900; font-size:120px; line-height:1; padding:6px 46px 30px; border-radius:12px; border-bottom:10px solid var(--o); }
-  .vA .t2 { background:var(--o); color:var(--k); font-weight:900; font-size:100px; line-height:1; padding:4px 46px 26px; border-radius:12px; }
+  .vA .shade { position:absolute; left:0; top:0; width:1000px; height:460px; background:radial-gradient(ellipse 100% 100% at 0 0, rgba(0,0,0,.62), rgba(0,0,0,.35) 45%, rgba(0,0,0,0) 75%); }
+  .logo-w { width:430px !important; filter:drop-shadow(0 2px 6px rgba(0,0,0,.45)) !important; }
+  .vA .title { position:absolute; right:30px; top:24px; display:flex; flex-direction:column; align-items:flex-end; gap:10px; }
+  .vA .t1 { background:var(--k); color:#fff; font-weight:900; font-size:96px; line-height:1; padding:6px 46px 30px; border-radius:12px; border-bottom:10px solid var(--o); }
+  .vA .t2 { background:var(--o); color:var(--k); font-weight:900; font-size:82px; line-height:1; padding:4px 46px 26px; border-radius:12px; }
   .vA .bar { position:absolute; left:0; right:0; bottom:0; height:250px; background:linear-gradient(0deg, rgba(0,0,0,.92), rgba(0,0,0,.82)); border-top:8px solid var(--o);
     display:flex; align-items:center; padding:0 40px; gap:22px; direction:rtl; }
   .vA .cell { flex:1; height:170px; border:4px solid var(--o); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; }
   .vA .cell svg { width:60px; height:60px; }
-  .vA .cell .t { color:#fff; font-weight:800; font-size:38px; line-height:1.1; text-align:center; }
+  .vA .cell .t { color:#fff; font-weight:800; font-size:38px; line-height:1.1; text-align:center; } .vA .cell .t small { font-size:24px; font-weight:700; color:#ffd2b8; }
   .vA .price { flex:1.35; height:190px; background:var(--o); border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
   .vA .price .l { font-weight:900; font-size:44px; color:var(--k); line-height:1; }
   .vA .price .n { font-size:96px; color:#fff; line-height:1.05; text-shadow:0 3px 0 rgba(0,0,0,.25); direction:ltr; }
@@ -56,11 +58,11 @@
   .vC .htxt { position:absolute; right:70px; top:20px; display:flex; align-items:center; gap:34px; direction:rtl; }
   .vC .htxt .a { color:#fff; font-weight:900; font-size:150px; line-height:1; margin-top:-30px; }
   .vC .htxt .b { color:var(--o); font-weight:900; font-size:150px; line-height:1; margin-top:-30px; }
-  .vC .chips { position:absolute; right:40px; top:330px; display:grid; grid-template-columns:1fr; gap:22px; direction:rtl; width:420px; }
+  .vC .chips { position:absolute; right:40px; top:330px; display:grid; grid-template-columns:1fr; gap:22px; direction:rtl; width:470px; }
   .vC .chip { display:flex; align-items:center; background:rgba(13,13,13,.9); border-radius:60px; height:112px; padding:0 14px 0 30px; gap:20px; border-right:14px solid var(--o); }
   .vC .chip .ic { width:84px; height:84px; border-radius:50%; background:var(--o); display:flex; align-items:center; justify-content:center; flex:none; }
   .vC .chip .ic svg { width:50px; height:50px; }
-  .vC .chip .t { color:#fff; font-weight:800; font-size:40px; line-height:1.1; }
+  .vC .chip .t { color:#fff; font-weight:800; font-size:40px; line-height:1.1; } .vC .chip .t small { font-size:27px; font-weight:700; color:#ffd2b8; }
   .vC .price { position:absolute; right:-40px; bottom:60px; width:1010px; height:210px; background:var(--o); transform:skewX(-18deg); }
   .vC .ptxt { position:absolute; right:60px; bottom:84px; display:flex; align-items:center; gap:30px; direction:rtl; }
   .vC .ptxt .l { color:var(--k); font-weight:900; font-size:66px; line-height:1; margin-top:-14px; }
@@ -95,15 +97,15 @@
 
   <!-- A -->
   <div class="v vA">
-    <img class="logo" src="logo.png" style="left:40px;top:44px">
-    <div class="title"><div class="t1">للبيــــع</div><div class="t2">توسان</div></div>
-    <div class="phone"><div class="pc" data-ic="phone"></div><div class="n lat">95533267</div></div>
+    <div class="shade"></div><img class="logo logo-w" src="logo_white.png" style="left:44px;top:40px">
+    <div class="title"><div class="t1">للبيــــع</div><div class="t2">فورد <span class="lat">F150</span></div></div>
+    <div class="phone"><div class="pc" data-ic="phone"></div><div class="n lat">92257873</div></div>
     <div class="bar">
-      <div class="cell"><span class="ic" data-ic="cal"></span><div class="t lat">2022</div></div>
-      <div class="cell"><span class="ic" data-ic="gauge"></span><div class="t">ماشي 130 الف كم</div></div>
-      <div class="cell"><span class="ic" data-ic="spray"></span><div class="t">صبغ الوكالة<br>عدا قطعة</div></div>
-      <div class="cell"><span class="ic" data-ic="user"></span><div class="t">المالك الأول</div></div>
-      <div class="price"><div class="l">السعر</div><div class="n lat">3,650 <small>K.D</small></div></div>
+      <div class="cell"><span class="ic" data-ic="cal"></span><div class="t">موديل <bdi class="lat">2022</bdi></div></div>
+      <div class="cell"><span class="ic" data-ic="gauge"></span><div class="t">العداد <bdi class="lat" dir="ltr">121 KM</bdi></div></div>
+      <div class="cell"><span class="ic" data-ic="spray"></span><div class="t">صبغ الوكالة</div></div>
+      <div class="cell"><span class="ic" data-ic="check"></span><div class="t">شرط الفحص<br><small>جير - مكينة - شاصي - بدي</small></div></div>
+      <div class="price"><div class="l">السعر</div><div class="n lat">8,200 <small>K.D</small></div></div>
     </div>
   </div>
 
@@ -126,17 +128,17 @@
   <!-- C -->
   <div class="v vC">
     <div class="hdr"></div><div class="hdr2"></div>
-    <div class="htxt"><span class="a">للبيع</span><span class="b">توسان</span></div>
+    <div class="htxt"><span class="a">للبيع</span><span class="b">فورد <span class="lat">F150</span></span></div>
     <img class="logo" src="logo.png" style="left:40px;top:40px">
     <div class="chips">
-      <div class="chip"><span class="ic" data-ic="cal" data-c="k"></span><div class="t lat">2022</div></div>
-      <div class="chip"><span class="ic" data-ic="gauge" data-c="k"></span><div class="t">ماشي 130 الف كم</div></div>
-      <div class="chip"><span class="ic" data-ic="spray" data-c="k"></span><div class="t">صبغ الوكالة<br>عدا قطعة</div></div>
-      <div class="chip"><span class="ic" data-ic="user" data-c="k"></span><div class="t">المالك الأول</div></div>
+      <div class="chip"><span class="ic" data-ic="cal" data-c="k"></span><div class="t">موديل <bdi class="lat">2022</bdi></div></div>
+      <div class="chip"><span class="ic" data-ic="gauge" data-c="k"></span><div class="t">العداد <bdi class="lat" dir="ltr">121 KM</bdi></div></div>
+      <div class="chip"><span class="ic" data-ic="spray" data-c="k"></span><div class="t">صبغ الوكالة</div></div>
+      <div class="chip"><span class="ic" data-ic="check" data-c="k"></span><div class="t">شرط الفحص<br><small>جير - مكينة - شاصي - بدي</small></div></div>
     </div>
     <div class="price"></div>
-    <div class="ptxt"><span class="l">السعر</span><span class="n lat">3,650 <small>K.D</small></span></div>
-    <div class="phone"><div class="pc" data-ic="phone"></div><div class="n lat">95533267</div></div>
+    <div class="ptxt"><span class="l">السعر</span><span class="n lat">8,200 <small>K.D</small></span></div>
+    <div class="phone"><div class="pc" data-ic="phone"></div><div class="n lat">92257873</div></div>
   </div>
 
   <!-- D -->
@@ -163,6 +165,7 @@ const IC = {
   gauge: c => `<svg viewBox="0 0 64 64" fill="none" stroke="${c}" stroke-width="4.5" stroke-linecap="round"><path d="M10 46a24 24 0 1 1 44 0"/><path d="M32 40 44 24"/><circle cx="32" cy="42" r="4" fill="${c}"/><path d="M14 30l4 2M20 18l3 4M32 12v5M44 18l-3 4M50 30l-4 2"/></svg>`,
   spray: c => `<svg viewBox="0 0 64 64" fill="none" stroke="${c}" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"><rect x="20" y="30" width="22" height="28" rx="4"/><path d="M26 30v-8h10v8M31 22v-8h14l6-6M45 14h10"/><path d="M8 10l4 2M6 18h5M8 26l4-2"/></svg>`,
   user: c => `<svg viewBox="0 0 64 64" fill="none" stroke="${c}" stroke-width="4.5" stroke-linecap="round"><circle cx="32" cy="20" r="11"/><path d="M10 58c2-13 11-20 22-20s20 7 22 20"/></svg>`,
+  check: c => `<svg viewBox="0 0 64 64" fill="none" stroke="${c}" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M32 6l22 8v16c0 14-10 24-22 28C20 54 10 44 10 30V14z"/><path d="M22 32l7 7 13-14"/></svg>`,
   phone: c => `<svg viewBox="0 0 24 24" width="56" height="56" fill="#0d0d0d"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>`
 };
 document.querySelectorAll('[data-ic]').forEach(el => { el.innerHTML = IC[el.dataset.ic](el.dataset.c === 'k' ? '#0d0d0d' : '#f26a1f'); });
