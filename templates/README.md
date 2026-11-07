@@ -13,7 +13,7 @@
 
 ## الملفات
 - `logo.png` / `logo_white.png`: شعار CARS FS.
-- `plate.py` + `mksticker.js` + `sticker.png`: ملصق FS على اللوحة بنفس شكلها وزاويتها:
+- `plate.py` + `mksticker.js` + `sticker.png`: ملصق اللوحة (لوحة سودا فيها شعار CARS FS الجديد وإطار برتقالي) بنفس شكل اللوحة وزاويتها:
   `node mksticker.js W H` ثم `python3 plate.py in.jpg out.jpg TLx,TLy TRx,TRy BRx,BRy BLx,BLy`
 - `tuesday-plan.md`: خطة تحدي الثلاثاء (مقارنات بدون تكرار).
 
