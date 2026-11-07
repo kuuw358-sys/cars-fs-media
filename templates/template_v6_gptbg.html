@@ -1,0 +1,38 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900;1000&family=Archivo:ital,wght@1,800&family=Archivo+Black&display=block" rel="stylesheet">
+<style>
+:root{--o:#f26a1f;--o2:#ff9a4a}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1441px;overflow:hidden}
+body{font-family:Cairo;color:#fff;position:relative;background:#111 url('gpt_bg.png') 0 0/1080px auto no-repeat}
+.car{position:absolute;left:30px;right:30px;top:230px;height:570px;background:url('car_bg_fade.png') center 55%/1060px auto no-repeat}
+.hd{position:absolute;top:70px;left:70px;right:70px;height:130px;display:flex;align-items:center;justify-content:space-between;direction:ltr}
+.brand img{width:200px;display:block}
+.sl{width:5px;height:96px;background:var(--o);transform:skewX(-18deg);border-radius:3px;box-shadow:0 0 10px var(--o)}
+.model{text-align:center;line-height:1}
+.model .a{font-family:'Archivo';font-style:italic;font-weight:800;font-size:84px;background:linear-gradient(180deg,#fff,#cfcfcf);-webkit-background-clip:text;color:transparent}
+.model .b{font-family:'Archivo Black';font-size:24px;letter-spacing:12px;color:#ddd;margin-top:8px}
+.sale{background:linear-gradient(180deg,var(--o2),var(--o) 60%,#d4520c);border-radius:24px;transform:skewX(-12deg);padding:0 40px 14px;box-shadow:0 10px 26px rgba(242,106,31,.55),inset 0 2px 0 rgba(255,255,255,.35)}
+.sale span{display:block;transform:skewX(12deg);font-weight:1000;font-size:66px;line-height:1.3}
+.cell{position:absolute;top:810px;height:232px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.cell svg{width:66px;height:66px;filter:drop-shadow(0 0 6px rgba(242,106,31,.55))}
+.cell .t{font-weight:900;font-size:36px;line-height:1.15;text-align:center}
+.cell .s{font-family:'Archivo';font-style:italic;font-weight:800;font-size:34px}
+.ph{position:absolute;left:46px;top:1096px;width:462px;height:124px;display:flex;align-items:center;gap:18px;padding-left:16px;direction:ltr}
+.ph .ic{width:92px;height:92px;border-radius:50%;background:linear-gradient(180deg,var(--o2),var(--o));display:flex;align-items:center;justify-content:center;box-shadow:0 0 14px rgba(242,106,31,.6)}
+.ph .n{font-family:'Archivo';font-style:italic;font-weight:800;font-size:58px}
+.pr{position:absolute;left:566px;top:1096px;width:468px;height:124px;display:flex;align-items:center;justify-content:center;gap:12px;direction:ltr}
+.pr .n{font-family:'Archivo';font-style:italic;font-weight:800;font-size:66px}
+.pr .c{font-family:'Archivo Black';font-size:38px;color:var(--o);margin-top:14px}
+.tab{position:absolute;left:800px;top:1072px;transform:translateX(-50%) skewX(-12deg);background:linear-gradient(180deg,var(--o2),var(--o));border-radius:12px;padding:0 30px 4px;font-weight:1000;font-size:32px;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+</style></head><body>
+<div class="car"></div>
+<div class="hd"><div class="brand"><img src="lexus_logo.png"></div><div class="sl"></div><div class="model"><div class="a">UX 200</div><div class="b">F SPORT</div></div><div class="sale"><span>للبيع</span></div></div>
+<div class="cell" style="left:50px;width:255px"><svg viewBox="0 0 64 64" fill="none" stroke="#f26a1f" stroke-width="4.5" stroke-linejoin="round"><rect x="6" y="12" width="52" height="46" rx="6"/><path d="M6 24h52M18 6v12M46 6v12"/><g fill="#f26a1f" stroke="none"><rect x="14" y="31" width="8" height="7"/><rect x="28" y="31" width="8" height="7"/><rect x="42" y="31" width="8" height="7"/><rect x="14" y="44" width="8" height="7"/><rect x="28" y="44" width="8" height="7"/></g></svg><div class="t">موديل<br><span class="s">2019</span></div></div>
+<div class="cell" style="left:305px;width:240px"><svg viewBox="0 0 64 64" fill="none" stroke="#f26a1f" stroke-width="4.5" stroke-linecap="round"><path d="M10 46a24 24 0 1 1 44 0"/><path d="M32 40 44 24"/><circle cx="32" cy="42" r="4" fill="#f26a1f"/></svg><div class="t">العداد<br><span class="s">92</span> الف كم</div></div>
+<div class="cell" style="left:545px;width:243px"><svg viewBox="0 0 64 64" fill="none" stroke="#f26a1f" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="12"/><path d="M33 33l20 20M45 45l6-6M51 51l4-4"/></svg><div class="t">سيرفس<br>الوكالة</div></div>
+<div class="cell" style="left:788px;width:240px"><svg viewBox="0 0 64 64" fill="none" stroke="#f26a1f" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6h22l12 12v40H18z"/><path d="M40 6v12h12"/><path d="M25 32h14M25 42h10"/><path d="M38 50l4 4 8-9"/></svg><div class="t">شرط<br>الفحص</div></div>
+<div class="ph"><div class="ic"><svg viewBox="0 0 24 24" width="50" height="50" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></div><div class="n">66653231</div></div>
+<div class="tab">السعر</div>
+<div class="pr"><span class="n">6,350</span><span class="c">K.D</span></div>
+</body></html>
