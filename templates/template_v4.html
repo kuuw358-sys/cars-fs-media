@@ -18,26 +18,29 @@ body{font-family:Cairo,sans-serif;background:radial-gradient(ellipse 90% 70% at 
 .model .b{font-family:'Archivo Black';font-size:26px;letter-spacing:12px;color:#ddd;margin-top:6px}
 .sale{background:linear-gradient(180deg,var(--o2),var(--o) 60%,#d6560f);border-radius:22px;transform:skewX(-12deg);padding:0 40px 14px;box-shadow:0 8px 24px rgba(242,106,31,.55)}
 .sale span{display:block;transform:skewX(12deg);font-weight:1000;font-size:64px;color:#fff;line-height:1.3}
-.photo{position:absolute;left:30px;right:30px;top:300px;height:560px;background:url('car_fade.png') center 55%/1000px auto no-repeat}
-.boxes{position:absolute;top:860px;left:62px;right:62px;display:flex;gap:22px}
-.bx{flex:1;height:180px;border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:3px solid var(--o);box-shadow:0 0 16px rgba(242,106,31,.45),inset 0 0 14px rgba(242,106,31,.15);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
-.bx svg{width:64px;height:64px}
-.bx .t{font-weight:1000;font-size:34px;line-height:1.12;text-align:center}
-.bx .t .s{font-family:'Archivo';font-style:italic;font-weight:800;font-size:30px}
-.bottom{position:absolute;top:1105px;left:62px;right:62px;height:130px;display:flex;align-items:center;gap:30px;direction:ltr}
-.ph{flex:1;height:118px;border-radius:60px;border:3px solid var(--o);background:rgba(0,0,0,.45);box-shadow:0 0 16px rgba(242,106,31,.4);display:flex;align-items:center;padding-left:12px;gap:18px}
-.ph .ic{width:92px;height:92px;border-radius:50%;background:linear-gradient(180deg,var(--o2),var(--o));display:flex;align-items:center;justify-content:center}
-.ph .n{font-family:'Archivo';font-style:italic;font-weight:800;font-size:60px}
+.photo{position:absolute;left:24px;right:24px;top:300px;height:660px;background:url('car_fade.png') center 52%/1080px auto no-repeat}
+.boxes{position:absolute;top:975px;left:62px;right:62px;display:flex;gap:16px}
+.bx{flex:1;height:110px;flex-direction:row!important;gap:10px!important;border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:3px solid var(--o);box-shadow:0 0 16px rgba(242,106,31,.45),inset 0 0 14px rgba(242,106,31,.15);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.bx svg{width:44px;height:44px;flex:none}
+.bx .t{font-weight:1000;font-size:26px;line-height:1.12;text-align:center}
+.bx .t .s{font-family:'Archivo';font-style:italic;font-weight:800;font-size:24px}
+.bottom{position:absolute;top:1125px;left:62px;right:62px;height:130px;display:flex;align-items:center;gap:30px;direction:ltr}
+.ph{flex:1;height:104px;border-radius:60px;border:3px solid var(--o);background:rgba(0,0,0,.45);box-shadow:0 0 16px rgba(242,106,31,.4);display:flex;align-items:center;padding-left:12px;gap:18px}
+.ph .ic{width:80px;height:80px;border-radius:50%;background:linear-gradient(180deg,var(--o2),var(--o));display:flex;align-items:center;justify-content:center}
+.ph .n{font-family:'Archivo';font-style:italic;font-weight:800;font-size:54px}
 .dv{width:4px;height:110px;background:linear-gradient(180deg,transparent,var(--o),transparent)}
-.pr{position:relative;flex:1;height:118px;border-radius:60px;border:3px solid var(--o);background:rgba(0,0,0,.45);box-shadow:0 0 16px rgba(242,106,31,.4);display:flex;align-items:center;justify-content:center;gap:14px}
+.pr{position:relative;flex:1;height:104px;border-radius:60px;border:3px solid var(--o);background:rgba(0,0,0,.45);box-shadow:0 0 16px rgba(242,106,31,.4);display:flex;align-items:center;justify-content:center;gap:14px}
 .pr .tab{position:absolute;top:-40px;left:50%;transform:translateX(-50%) skewX(-12deg);background:linear-gradient(180deg,var(--o2),var(--o));padding:0 30px 6px;border-radius:12px;font-weight:1000;font-size:34px;color:#0d0d0d;direction:rtl}
-.pr .n{font-family:'Archivo';font-style:italic;font-weight:800;font-size:70px}
+.pr .n{font-family:'Archivo';font-style:italic;font-weight:800;font-size:62px}
 .pr .c{font-family:'Archivo Black';font-size:40px;color:var(--o);margin-top:14px}
 .line{position:absolute;bottom:58px;left:120px;right:240px;height:4px;background:linear-gradient(90deg,transparent,var(--o),transparent)}
+
+.brand2{display:flex;flex-direction:column;align-items:center;gap:6px}
+.brand2 .wm{font-family:'Archivo Black';font-size:30px;letter-spacing:10px;color:#fff}
 </style></head><body>
 <div class="corner"></div><div class="corner2"></div><div class="frame"></div>
 <img class="logo" src="logo_new_white.png"><div class="dots"><i></i><i></i><i></i></div>
-<div class="row1"><div class="brand">LEXUS</div><div class="sl"></div><div class="model"><div class="a">UX 200</div><div class="b">F SPORT</div></div><div class="sale"><span>للبيع</span></div></div>
+<div class="row1"><div class="brand2"><svg viewBox="0 0 200 130" width="150" height="98"><ellipse cx="100" cy="65" rx="92" ry="58" fill="none" stroke="#fff" stroke-width="9"/><path d="M118 14 L66 104 L156 104" fill="none" stroke="#fff" stroke-width="11" stroke-linejoin="miter"/></svg><div class="wm">LEXUS</div></div><div class="sl"></div><div class="model"><div class="a">UX 200</div><div class="b">F SPORT</div></div><div class="sale"><span>للبيع</span></div></div>
 <div class="photo"></div>
 <div class="boxes">
  <div class="bx"><svg viewBox="0 0 64 64" fill="none" stroke="#f26a1f" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6h22l12 12v40H18z"/><path d="M40 6v12h12"/><path d="M25 32h14M25 42h10"/><path d="M38 50l4 4 8-9"/></svg><div class="t">شرط<br>الفحص</div></div>
