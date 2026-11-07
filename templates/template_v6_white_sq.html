@@ -4,9 +4,14 @@
 :root{--o:#f26a1f;--k:#151515}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1221px;height:1289px;overflow:hidden}
-body{font-family:Cairo;color:var(--k);position:relative;background:#eee url('gpt_bg_white_sq.png') 0 0/1221px 1289px no-repeat}
+body{font-family:Cairo;color:var(--k);position:relative;background:#fff}
+.sceneb{position:absolute;inset:-40px;background:url('car_v4.jpg') center 30%/cover no-repeat;filter:blur(18px) brightness(1.05)}
+.scene{position:absolute;left:60px;top:40px;width:1100px;height:825px;background:url('car_v4.jpg') 0 0/1100px 825px no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%)}
+.fade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.7) 0%,rgba(255,255,255,.25) 16%,rgba(255,255,255,0) 26%,rgba(255,255,255,0) 52%,rgba(255,255,255,.9) 58%,#fff 62%)}
+.tpl{position:absolute;inset:0;background:url('gpt_bg_white_sq.png') 0 0/1221px 1289px no-repeat;mix-blend-mode:multiply}
 .car{position:absolute;left:34px;right:34px;top:300px;height:450px;background:url('car_fade_wsq.png') center 60%/1100px auto no-repeat}
-.ttl{position:absolute;top:92px;left:160px;direction:ltr;line-height:1}
+.ttl{position:absolute;top:92px;left:160px;direction:ltr;line-height:1;text-shadow:0 0 18px #fff,0 0 30px #fff}
+.glowt{position:absolute;left:40px;top:40px;width:560px;height:280px;background:radial-gradient(ellipse at 40% 45%,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 45%,rgba(255,255,255,0) 72%)}
 .ttl .a{font-family:'Archivo';font-style:italic;font-weight:800;font-size:64px}
 .ttl .b{font-family:'Archivo';font-style:italic;font-weight:800;font-size:92px;margin-top:2px}
 .ttl .c{font-family:'Archivo Black';font-size:28px;letter-spacing:14px;margin-top:12px}
@@ -24,7 +29,7 @@ body{font-family:Cairo;color:var(--k);position:relative;background:#eee url('gpt
 .pr .n{font-family:'Archivo';font-style:italic;font-weight:800;font-size:76px;color:#fff;text-shadow:0 3px 8px rgba(0,0,0,.2)}
 .pr .c{font-family:'Archivo';font-style:italic;font-weight:800;font-size:42px;color:#fff;margin-top:14px}
 </style></head><body>
-<div class="car"></div>
+<div class="sceneb"></div><div class="scene"></div><div class="fade"></div><div class="glowt"></div><div class="tpl"></div>
 <div class="ttl"><div class="a">Lexus</div><div class="b">UX 200</div><div class="c">F SPORT</div></div>
 <div class="sale"><span>للبيع</span></div>
 <div class="bx" style="left:75px;width:231px"><svg viewBox="0 0 64 64" fill="none" stroke="#f26a1f" stroke-width="4" stroke-linejoin="round"><rect x="6" y="12" width="52" height="46" rx="6"/><path d="M6 24h52M18 6v12M46 6v12"/><g fill="#f26a1f" stroke="none"><rect x="14" y="31" width="8" height="7"/><rect x="28" y="31" width="8" height="7"/><rect x="42" y="31" width="8" height="7"/><rect x="14" y="44" width="8" height="7"/><rect x="28" y="44" width="8" height="7"/></g></svg><div class="t">موديل<br><span class="s">2019</span></div></div>
