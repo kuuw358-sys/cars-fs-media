@@ -1,0 +1,15 @@
+{
+  "brand": "Lexus",
+  "model": "UX 200",
+  "trim": "F SPORT",
+  "badge": "للبيع",
+  "photo": "photos/lexus-ux200.jpg",
+  "photoPosition": "center",
+  "year": "2019",
+  "mileage": "92 ألف كم",
+  "service": "سيرفس الوكالة",
+  "inspection": "شرط الفحص",
+  "price": "6,350",
+  "currency": "K.D",
+  "phone": "66653231"
+}
