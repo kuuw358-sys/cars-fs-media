@@ -6,7 +6,7 @@
   "trim": "F SPORT",
   "badge": "للبيع",
   "photo": "photos/lexus-ux200-full.jpg",
-  "car": { "left": 31, "width": 1159, "bottom": 742, "tyreY": 0.887, "photoH": 1536, "frostStart": 748, "frostFull": 790 },
+  "car": { "left": 0, "width": 1221, "bottom": 742, "tyreY": 0.887, "photoH": 1536, "frostStart": 748, "frostFull": 790 },
   "frostOpacity": 1,
   "year": "2019",
   "mileage": "92 ألف كم",

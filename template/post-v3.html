@@ -16,7 +16,7 @@
 
   /* photo: full background inside the orange frame, sharp to the tyres, short fade only on the ground below */
   /* layers: background -> car photo over the whole frame -> frosted template for the info area -> orange shapes -> text */
-  .clip { position: absolute; inset: 0; clip-path: inset(39px 32px 40px 31px round 88px); }
+  .clip { position: absolute; inset: 0; } /* photo runs past the frame to the canvas edges; the frost restores the template below */
   .clip img { position: absolute; display: block; }
   .frost { position: absolute; inset: 0; backdrop-filter: blur(var(--blur, 6px));
     -webkit-mask-image: linear-gradient(to bottom, transparent var(--frostA), #000 var(--frostB)); }
