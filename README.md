@@ -37,3 +37,7 @@ Font: Cairo (SIL Open Font License), bundled in `fonts/`.
 - The template is `template/post-v3.html`.
 - Example: `cars/lexus-ux200-v3.json`, rendered with `node render.js cars/lexus-ux200-v3.json`.
 - The car photo fills the frame edge to edge with its full background. Only the ground below the tyres fades out, above the specs.
+- The car photo is the background of the whole frame. First extend the ground in the original photo:
+  `python3 tools/extend_ground.py photos/<car>-original.jpg photos/<car>-full.jpg`
+  Set `photo` in the JSON file to the extended photo, and set `car.photoH` to the original photo's height.
+- `frostOpacity` (0 to 1) sets how light the white layer over the info area is. The default is 0.78, and the Lexus example uses 0.55.

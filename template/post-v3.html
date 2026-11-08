@@ -15,9 +15,13 @@
   .abs { position: absolute; }
 
   /* photo: full background inside the orange frame, sharp to the tyres, short fade only on the ground below */
-  .clip { position: absolute; inset: 0; clip-path: inset(39px 32px 40px 31px round 88px 88px 0 0); }
-  .clip img { position: absolute; display: block;
-    -webkit-mask-image: linear-gradient(to bottom, #000 var(--fadeA), transparent var(--fadeB)); -webkit-mask-size: 100% 100%; }
+  /* layers: background -> car photo over the whole frame -> frosted template for the info area -> orange shapes -> text */
+  .clip { position: absolute; inset: 0; clip-path: inset(39px 32px 40px 31px round 88px); }
+  .clip img { position: absolute; display: block; }
+  .frost { position: absolute; inset: 0; backdrop-filter: blur(var(--blur, 6px));
+    -webkit-mask-image: linear-gradient(to bottom, transparent var(--frostA), #000 var(--frostB)); }
+  .frost::after { content: ""; position: absolute; inset: 0; background: url(bg-v3.png) 0 0 / 1221px 1289px; opacity: var(--frostOpacity, .78); }
+  .orange { position: absolute; left: 0; top: 0; pointer-events: none; }
 
   .haze { left: 31px; top: 39px; width: 560px; height: 280px; border-top-left-radius: 88px;
     background: radial-gradient(ellipse 70% 80% at 32% 38%, rgba(255,255,255,.8) 25%, rgba(255,255,255,0) 100%); }
@@ -49,9 +53,8 @@
 </style>
 </head>
 <body>
-  <div class="clip"><img id="photo" alt=""></div>
-  <img class="abs" src="v3-badge.png" style="left:825px;top:80px">
-  <img class="abs" src="v3-slash.png" style="left:60px;top:85px">
+  <div class="clip"><img id="photo" alt=""><div class="frost" id="frost"></div></div>
+  <img class="orange" src="v3-orange.png">
   <div class="abs haze"></div>
   <div class="abs title"><div class="brand" data-k="brand"></div><div class="model" data-k="model"></div><div class="trim" data-k="trim"></div></div>
   <div class="abs badge" data-k="badge"></div>
@@ -81,17 +84,19 @@
   <div class="abs price"><span class="num" data-k="price"></span><span class="cur" data-k="currency"></span></div>
 
 <script>
-  // car: { left, width, bottom, tyreY, fadeEnd } — tyre line of the photo (tyreY, 0..1) lands at canvas y = bottom
+  // car: { left, width, bottom, tyreY, frostStart, frostFull } — tyre line of the photo (tyreY, 0..1) lands at canvas y = bottom
   window.fill = async (d) => {
     document.querySelectorAll('[data-k]').forEach(el => el.textContent = d[el.dataset.k] ?? '');
     const img = document.getElementById('photo');
-    img.src = '../' + d.photo;
+    img.src = '../' + d.photo;   // use a photo whose ground was extended with tools/extend_ground.py
     await Promise.all([document.fonts.ready, img.decode()]);
-    const c = d.car, h = c.width * img.naturalHeight / img.naturalWidth, top = c.bottom - c.tyreY * h;
+    const c = d.car, h = c.width * img.naturalHeight / img.naturalWidth, top = c.bottom - c.tyreY * c.width * (c.photoH ?? img.naturalHeight) / img.naturalWidth;
     Object.assign(img.style, { left: c.left + 'px', top: top + 'px', width: c.width + 'px', height: h + 'px' });
-    const rel = y => ((y - top) / h * 100).toFixed(2) + '%';
-    img.style.setProperty('--fadeA', rel(c.bottom + 6));
-    img.style.setProperty('--fadeB', rel(c.fadeEnd ?? 772));
+        // photo covers the whole frame: scale up if needed so it reaches the bottom edge
+    const f = document.getElementById('frost');
+    f.style.setProperty('--frostA', (c.frostStart ?? c.bottom + 8) + 'px');
+    f.style.setProperty('--frostB', (c.frostFull ?? 880) + 'px');
+    if (d.frostOpacity != null) f.style.setProperty('--frostOpacity', d.frostOpacity);
   };
 </script>
 </body>
