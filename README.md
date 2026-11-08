@@ -22,3 +22,13 @@ Optional JSON fields:
 - `"photoPosition": "center 70%"` sets which part stays in view when cropping.
 
 Font: Cairo (SIL Open Font License), bundled in `fonts/`.
+
+## Square template on the designer background (1254×1254)
+- The background is `template/bg-square.png`, and the template is `template/post-square.html`.
+- Example: `cars/lexus-ux200-square.json`, rendered with `node render.js cars/lexus-ux200-square.json`.
+- The car stays sharp down to the tyres. Only the ground below them fades into white, above the specs row.
+- The `car` field sets the photo's position:
+  - `left` and `width` set the photo's placement and width.
+  - `bottom` is the line where the tyres sit on the canvas.
+  - `tyreY` is where the tyres sit inside the photo, as a fraction from 0 to 1 of its height.
+- The number plate is covered with the CARS FS plate before rendering (see `photos/lexus-ux200-original.jpg`).
