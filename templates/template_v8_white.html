@@ -1,0 +1,62 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900;1000&family=Archivo:ital,wght@1,800&family=Archivo+Black&display=block" rel="stylesheet">
+<style>
+:root{--o:#f26a1f;--k:#151515}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1254px;height:1254px;overflow:hidden}
+body{font-family:Cairo;color:var(--k);position:relative;background:#fff}
+.sceneb{position:absolute;inset:-40px;background:url('car_v4.jpg') center 30%/cover no-repeat;filter:blur(18px) brightness(1.05)}
+.scene{position:absolute;left:52px;top:40px;width:1150px;height:862px;background:url('car_v4.jpg') 0 0/1150px 862px no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%)}
+.fade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.7) 0%,rgba(255,255,255,.25) 16%,rgba(255,255,255,0) 26%,rgba(255,255,255,0) 54%,rgba(255,255,255,.85) 60%,#fff 64%)}
+.tpl{position:absolute;inset:0;background:url('gpt_bg_white3.png') 0 0/1254px 1254px no-repeat;mix-blend-mode:multiply}
+.car{position:absolute;left:34px;right:34px;top:300px;height:450px;background:url('car_fade_wsq.png') center 60%/1100px auto no-repeat}
+.ttl{position:absolute;top:92px;left:160px;direction:ltr;line-height:1;text-shadow:0 0 18px #fff,0 0 30px #fff}
+.glowt{position:absolute;left:40px;top:40px;width:560px;height:280px;background:radial-gradient(ellipse at 40% 45%,rgba(255,255,255,.92) 0%,rgba(255,255,255,.7) 45%,rgba(255,255,255,0) 72%)}
+.ttl .a{font-family:'Archivo';font-style:italic;font-weight:800;font-size:64px}
+.ttl .b{font-family:'Archivo';font-style:italic;font-weight:800;font-size:92px;margin-top:2px}
+.ttl .c{font-family:'Archivo Black';font-size:28px;letter-spacing:14px;margin-top:12px}
+.salebg{position:absolute;top:90px;left:870px;width:290px;height:142px;transform:skewX(-24deg);border-radius:32px;background:linear-gradient(180deg,#ff7a1a 0%,#e85d0c 55%,#c9480a 100%);box-shadow:0 14px 28px rgba(200,72,10,.45),inset 0 2px 0 rgba(255,255,255,.3)}
+.sale{position:absolute;top:90px;left:838px;width:328px;height:142px;display:flex;align-items:center;justify-content:center}
+.sale span{font-weight:1000;font-size:84px;color:#fff;margin-top:-16px;text-shadow:0 3px 8px rgba(0,0,0,.2)}
+.bx{position:absolute;top:745px;height:218px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.bx svg{width:66px;height:66px}
+.bx .t{font-weight:900;font-size:36px;line-height:1.15;text-align:center}
+.bx .s{font-family:'Archivo';font-style:italic;font-weight:800;font-size:34px}
+.ph{position:absolute;left:66px;top:1026px;width:516px;height:144px;display:flex;align-items:center;gap:24px;padding-left:40px;direction:ltr}
+.ph .ic{width:96px;height:96px;border-radius:50%;background:linear-gradient(180deg,#ff9a4a,var(--o));display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(242,106,31,.4)}
+.ph .n{font-family:'Archivo';font-style:italic;font-weight:800;font-size:64px}
+.tab{position:absolute;left:802px;top:997px;width:194px;height:56px;display:flex;align-items:center;justify-content:center;font-weight:1000;font-size:36px;color:#fff}
+.pr{position:absolute;left:640px;top:1048px;width:515px;height:122px;display:flex;align-items:center;justify-content:center;gap:12px;direction:ltr}
+.pr .n{font-family:'Archivo';font-style:italic;font-weight:800;font-size:76px;color:#fff;text-shadow:0 3px 8px rgba(0,0,0,.2)}
+.pr .c{font-family:'Archivo';font-style:italic;font-weight:800;font-size:42px;color:#fff;margin-top:14px}
+
+.bx{top:770px!important;height:178px!important}
+.bx svg{width:62px!important;height:62px!important}
+.bx .t{font-size:34px!important}
+.ph{top:1026px!important;height:142px!important;padding-left:34px!important}
+.pr{top:1034px!important;left:646px!important;width:510px!important;height:134px!important}
+.tab{top:988px!important;left:822px!important;width:188px!important;height:60px!important;color:#f26a1f!important;font-size:36px!important}
+
+.salebg{top:97px!important;left:868px!important;width:310px!important;height:150px!important}
+.sale{top:97px!important;left:832px!important;width:353px!important;height:150px!important}
+.ttl{top:96px!important;left:150px!important}
+.bx{top:770px!important;height:180px!important}
+.ph{left:80px!important;top:1025px!important;width:513px!important;height:126px!important;padding-left:38px!important;gap:30px!important}
+.ph .ic{width:94px!important;height:94px!important;background:transparent!important;box-shadow:none!important}
+.ph .n{font-size:58px!important}
+.pr{left:668px!important;top:1025px!important;width:500px!important;height:130px!important;flex-direction:column;gap:0!important}
+.pr .row{display:flex;align-items:center;gap:12px;direction:ltr;margin-top:-6px}
+.pr .lbl{font-weight:1000;font-size:28px;color:#fff;opacity:.92;line-height:1;margin-top:6px}
+.tab{display:none}
+</style></head><body>
+<div class="sceneb"></div><div class="scene"></div><div class="fade"></div><div class="glowt"></div><div class="tpl"></div>
+<div class="ttl"><div class="a">Lexus</div><div class="b">UX 200</div><div class="c">F SPORT</div></div>
+<div class="salebg"></div><div class="sale"><span>للبيع</span></div>
+<div class="bx" style="left:80px;width:263px"><svg viewBox="0 0 64 64" fill="none" stroke="#f26a1f" stroke-width="4" stroke-linejoin="round"><rect x="6" y="12" width="52" height="46" rx="6"/><path d="M6 24h52M18 6v12M46 6v12"/><g fill="#f26a1f" stroke="none"><rect x="14" y="31" width="8" height="7"/><rect x="28" y="31" width="8" height="7"/><rect x="42" y="31" width="8" height="7"/><rect x="14" y="44" width="8" height="7"/><rect x="28" y="44" width="8" height="7"/></g></svg><div class="t">موديل<br><span class="s">2019</span></div></div>
+<div class="bx" style="left:343px;width:287px"><svg viewBox="0 0 64 64" fill="none" stroke="#f26a1f" stroke-width="4" stroke-linecap="round"><path d="M10 46a24 24 0 1 1 44 0"/><path d="M32 40 44 24"/><circle cx="32" cy="42" r="4" fill="#f26a1f"/></svg><div class="t">العداد<br><span class="s">92</span> الف كم</div></div>
+<div class="bx" style="left:630px;width:278px"><svg viewBox="0 0 64 64" fill="none" stroke="#f26a1f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="12"/><path d="M33 33l20 20M45 45l6-6M51 51l4-4"/></svg><div class="t">سيرفس<br>الوكالة</div></div>
+<div class="bx" style="left:908px;width:265px"><svg viewBox="0 0 64 64" fill="none" stroke="#f26a1f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6h22l12 12v40H18z"/><path d="M40 6v12h12"/><path d="M25 32h14M25 42h10"/><path d="M38 50l4 4 8-9"/></svg><div class="t">شرط<br>الفحص</div></div>
+<div class="ph"><div class="ic"><svg viewBox="0 0 24 24" width="52" height="52" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></div><div class="n">66653231</div></div>
+<div class="tab">السعر</div>
+<div class="pr"><span class="lbl">السعر</span><div class="row"><span class="n">6,350</span><span class="c">K.D</span></div></div>
+</body></html>
