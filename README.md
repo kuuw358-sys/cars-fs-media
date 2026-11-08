@@ -32,3 +32,8 @@ Font: Cairo (SIL Open Font License), bundled in `fonts/`.
   - `bottom` is the line where the tyres sit on the canvas.
   - `tyreY` is where the tyres sit inside the photo, as a fraction from 0 to 1 of its height.
 - The number plate is covered with the CARS FS plate before rendering (see `photos/lexus-ux200-original.jpg`).
+
+## Final template (1221×1289), background `template/bg-v3.png`
+- The template is `template/post-v3.html`.
+- Example: `cars/lexus-ux200-v3.json`, rendered with `node render.js cars/lexus-ux200-v3.json`.
+- The car photo fills the frame edge to edge with its full background. Only the ground below the tyres fades out, above the specs.

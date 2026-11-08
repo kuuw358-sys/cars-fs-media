@@ -13,7 +13,7 @@ const path = require('path');
   for (const f of files) {
     const data = JSON.parse(fs.readFileSync(f, 'utf8'));
     const tpl = data.template || 'post.html';
-    const size = tpl === 'post-square.html' ? { width: 1254, height: 1254 } : { width: 1080, height: 1350 };
+    const size = data.size ? { width: data.size[0], height: data.size[1] } : tpl === 'post-square.html' ? { width: 1254, height: 1254 } : { width: 1080, height: 1350 };
     await page.setViewportSize(size);
     await page.goto('file://' + path.join(__dirname, 'template', tpl));
     await page.evaluate((d) => window.fill(d), data);

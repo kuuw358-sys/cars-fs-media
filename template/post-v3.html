@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<!-- 1221x1289 post on the designer background template/bg-v3.png; the car photo fills the frame edge to edge -->
+<style>
+  @font-face { font-family: Cairo; src: url(../fonts/cairo-arabic.woff2) format("woff2"); font-weight: 200 1000;
+    unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFC; }
+  @font-face { font-family: Cairo; src: url(../fonts/cairo-latin.woff2) format("woff2"); font-weight: 200 1000;
+    unicode-range: U+0000-00FF, U+2000-206F; }
+  :root { --orange: #ff6a13; --orange2: #ff9a3c; --ink: #141414; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1221px; height: 1289px; overflow: hidden; }
+  body { font-family: Cairo, sans-serif; position: relative; background: #fff url(bg-v3.png) 0 0 / 1221px 1289px no-repeat; }
+  .abs { position: absolute; }
+
+  /* photo: full background inside the orange frame, sharp to the tyres, short fade only on the ground below */
+  .clip { position: absolute; inset: 0; clip-path: inset(39px 32px 40px 31px round 88px 88px 0 0); }
+  .clip img { position: absolute; display: block;
+    -webkit-mask-image: linear-gradient(to bottom, #000 var(--fadeA), transparent var(--fadeB)); -webkit-mask-size: 100% 100%; }
+
+  .haze { left: 31px; top: 39px; width: 560px; height: 280px; border-top-left-radius: 88px;
+    background: radial-gradient(ellipse 70% 80% at 32% 38%, rgba(255,255,255,.8) 25%, rgba(255,255,255,0) 100%); }
+  .title { left: 150px; top: 78px; direction: ltr; color: var(--ink); font-style: italic; text-shadow: 0 0 16px #fff, 0 0 6px #fff; }
+  .title .brand { font-weight: 800; font-size: 50px; line-height: 1; }
+  .title .model { font-weight: 900; font-size: 88px; line-height: 1; letter-spacing: -1px; }
+  .title .trim  { font-weight: 800; font-size: 22px; letter-spacing: 13px; margin-top: 6px; font-style: normal; }
+  .badge { left: 850px; top: 90px; width: 310px; height: 142px; display: grid; place-items: center;
+    color: #fff; font-weight: 900; font-size: 72px; line-height: 1; padding-bottom: 12px; }
+
+  /* specs: smaller text between the thin dividers */
+  .specs { left: 70px; top: 778px; width: 1080px; height: 165px; display: grid; grid-template-columns: repeat(4, 1fr); direction: rtl; }
+  .spec { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; text-align: center; }
+  .spec svg { width: 40px; height: 40px; stroke: var(--orange); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 6px; }
+  .spec .t { font-size: 25px; font-weight: 800; color: var(--ink); line-height: 1.15; }
+  .spec .v { font-size: 23px; font-weight: 800; color: #333; line-height: 1.15; }
+
+  .phone-ic { left: 98px; top: 1046px; width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center;
+    background: radial-gradient(circle at 35% 30%, var(--orange2), var(--orange) 70%); box-shadow: 0 8px 18px rgba(255,106,19,.35); }
+  .phone-ic svg { width: 44px; height: 44px; fill: #fff; }
+  .phone { left: 205px; top: 1025px; width: 370px; height: 140px; display: grid; place-items: center;
+    font-size: 58px; font-weight: 900; color: var(--ink); direction: ltr; font-style: italic; letter-spacing: 1px; }
+  .price-lbl { left: 825px; top: 988px; width: 185px; height: 60px; display: grid; place-items: center;
+    color: var(--orange); font-size: 31px; font-weight: 900; padding-bottom: 6px; }
+  .price { left: 648px; top: 1046px; width: 505px; height: 122px; display: flex; align-items: center; justify-content: center; gap: 14px;
+    direction: ltr; color: #fff; font-style: italic; }
+  .price .num { font-size: 68px; font-weight: 900; }
+  .price .cur { font-size: 32px; font-weight: 900; margin-top: 12px; }
+</style>
+</head>
+<body>
+  <div class="clip"><img id="photo" alt=""></div>
+  <img class="abs" src="v3-badge.png" style="left:825px;top:80px">
+  <img class="abs" src="v3-slash.png" style="left:60px;top:85px">
+  <div class="abs haze"></div>
+  <div class="abs title"><div class="brand" data-k="brand"></div><div class="model" data-k="model"></div><div class="trim" data-k="trim"></div></div>
+  <div class="abs badge" data-k="badge"></div>
+
+  <div class="abs specs">
+    <div class="spec">
+      <svg viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6z"/><path d="M9 10h7M9 14h4M11 18l2 2 4-4"/></svg>
+      <div class="t" data-k="inspection1"></div><div class="v" data-k="inspection2"></div>
+    </div>
+    <div class="spec">
+      <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="5"/><path d="M11.5 11.5L21 21M17 17l2-2M15 15l2-2"/></svg>
+      <div class="t" data-k="service1"></div><div class="v" data-k="service2"></div>
+    </div>
+    <div class="spec">
+      <svg viewBox="0 0 24 24"><path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 18l4-6"/></svg>
+      <div class="t">العداد</div><div class="v" data-k="mileage"></div>
+    </div>
+    <div class="spec">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M7 14h2M11 14h2M15 14h2M7 17h2M11 17h2"/></svg>
+      <div class="t">موديل</div><div class="v" data-k="year"></div>
+    </div>
+  </div>
+
+  <div class="abs phone-ic"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></div>
+  <div class="abs phone" data-k="phone"></div>
+  <div class="abs price-lbl">السعر</div>
+  <div class="abs price"><span class="num" data-k="price"></span><span class="cur" data-k="currency"></span></div>
+
+<script>
+  // car: { left, width, bottom, tyreY, fadeEnd } — tyre line of the photo (tyreY, 0..1) lands at canvas y = bottom
+  window.fill = async (d) => {
+    document.querySelectorAll('[data-k]').forEach(el => el.textContent = d[el.dataset.k] ?? '');
+    const img = document.getElementById('photo');
+    img.src = '../' + d.photo;
+    await Promise.all([document.fonts.ready, img.decode()]);
+    const c = d.car, h = c.width * img.naturalHeight / img.naturalWidth, top = c.bottom - c.tyreY * h;
+    Object.assign(img.style, { left: c.left + 'px', top: top + 'px', width: c.width + 'px', height: h + 'px' });
+    const rel = y => ((y - top) / h * 100).toFixed(2) + '%';
+    img.style.setProperty('--fadeA', rel(c.bottom + 6));
+    img.style.setProperty('--fadeB', rel(c.fadeEnd ?? 772));
+  };
+</script>
+</body>
+</html>
