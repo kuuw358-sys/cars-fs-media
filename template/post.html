@@ -104,6 +104,8 @@
 <script>
   window.fill = (d) => {
     document.querySelectorAll('[data-k]').forEach(el => el.textContent = d[el.dataset.k] ?? '');
+    // trim (e.g. F SPORT) only shows when it was given
+    document.querySelector('.title .trim').style.display = d.trim ? '' : 'none';
     const img = document.getElementById('photo'), bg = document.getElementById('photoBg');
     img.style.setProperty('--pos', d.photoPosition || 'center');
     img.style.setProperty('--fit', d.photoFit || 'contain');   // "cover" fills the box (may crop edges)

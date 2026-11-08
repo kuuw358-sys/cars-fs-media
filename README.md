@@ -1,5 +1,11 @@
 # cars-fs-media
 
+**Approved template: `template/post.html` (1080×1350).** The other templates are earlier drafts.
+
+Rules for every car:
+- Always write the brand.
+- Write the trim (`trim`) only if it is given in the car's text. Otherwise leave it out of the JSON file and the line is hidden.
+
 Instagram post template for CARS FS listings (1080×1350, 4:5).
 
 ## Layout
