@@ -110,6 +110,16 @@
     img.style.setProperty('--pos', d.photoPosition || 'center');
     img.style.setProperty('--fit', d.photoFit || 'contain');   // "cover" fills the box (may crop edges)
     img.src = bg.src = '../' + d.photo;
+    // "fit": no blur, no crop - the box shrinks to the photo's own shape (centred)
+    if (d.photoFit === 'fit') {
+      img.style.setProperty('--fit', 'cover'); bg.style.display = 'none';
+      const box = img.parentElement;
+      return Promise.all([document.fonts.ready, img.decode()]).then(() => {
+        const h = box.clientHeight, w = Math.min(box.clientWidth, Math.round(h * img.naturalWidth / img.naturalHeight));
+        box.style.width = w + 'px'; box.style.flex = 'none'; box.style.height = h + 'px';
+        box.style.alignSelf = 'center'; box.style.margin = '0 auto';
+      });
+    }
     return Promise.all([document.fonts.ready, img.decode(), bg.decode()]);
   };
 </script>

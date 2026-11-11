@@ -15,7 +15,7 @@ The owner's workflow: they send car photos + text here, and Claude does everythi
 1. Check the photos are original, with no AI edits to the car or background. If they are edited, tell the owner and stop until originals arrive.
 2. Cover the number plate with the CARS FS sticker at the plate's angle (`tools/plate/`):
    `cd tools/plate && node mksticker.js W H && python3 plate.py in.jpg out.jpg TLx,TLy TRx,TRy BRx,BRy BLx,BLy`
-3. Put the **first photo the owner sends** in the template (always, not the "clearest"). All other photos go in the post as originals. Post images are 1080×1350, stories 1080×1920.
+3. Put the **first photo the owner sends** in the template (always, not the "clearest"), whole and untouched: use `"photoFit": "fit"` (no crop, no blurred side fill). All other photos go in the post as originals. Post images are 1080×1350, stories 1080×1920.
 4. Show the owner the design and the full post. **Nothing is published before the word «موافق».**
 5. Schedule on Instagram + TikTok via Metricool (brand `cars__fs`, blogId 7783138, timezone Asia/Kuwait). TikTok title = first line of the caption.
    Instagram story works via Metricool; TikTok story and Snapchat are manual.
