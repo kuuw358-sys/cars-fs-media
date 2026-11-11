@@ -36,6 +36,7 @@ The owner's workflow: they send car photos + text here, and Claude does everythi
 
 ## Repo and backup rules
 - Never merge anything into `main` until the owner says «ادمج». Work on a branch first.
+- **Owner's standing order: every change of any kind is saved to BOTH GitHub (commit + push right away) and Drive (a new backup copy right away).**
 - Google Drive is normally **disconnected**. After any important change (rules, template or tools), remind the owner:
   «فيه تعديل، اربطني في Drive عشان نحفظ النسخة». Then save a dated copy (date + time) in the Drive folder «CARS FS - القوالب (آخر تعديل)», keep the latest two, and move older copies to the Drive trash.
   Name the newest «… ← الأحدث» and rename the one before it «… ← السابق», so the owner can tell them apart. Never overwrite the same file.
