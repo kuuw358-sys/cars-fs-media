@@ -4,7 +4,7 @@ Instagram/TikTok account **cars__fs** (Kuwait used-car listings). Always reply i
 The owner's workflow: they send car photos + text here, and Claude does everything else. Their only steps are sending and saying "موافق".
 
 ## Approved template (the only one)
-- **`template/post.html`, 1080×1350 (4:5)**, rendered with `node render.js cars/<car>.json` → `output/<car>.png`. Example: `cars/lexus-ux200.json`.
+- **`template/post.html`, 1080×1350 (4:5)**, rendered with `node render.js cars/<car>.json` → `output/<car>.jpg` (always JPEG: TikTok rejects PNG). Example: `cars/lexus-ux200.json`.
 - Layout: brand / model / trim top-left, «للبيع» badge top-right, car photo in a rounded box, one row of 4 fields with icons (موديل، العداد، الصيانة، الفحص), then phone pill and price pill («السعر»).
 - **Brand is written in Arabic** (e.g. «لكزس», not "Lexus"). Model stays as written (e.g. "UX 200").
 - Write the trim only if it is in the car's text; otherwise leave it out of the JSON.
