@@ -17,7 +17,7 @@ The owner's workflow: they send car photos + text here, and Claude does everythi
    `cd tools/plate && node mksticker.js W H && python3 plate.py in.jpg out.jpg TLx,TLy TRx,TRy BRx,BRy BLx,BLy`
 3. Put the **first photo the owner sends** in the template (always, not the "clearest"), untouched, filling the full photo box: use `"photoFit": "cover"` (never a blurred side fill, never a shrunken box). All other photos go in the post as originals. Post images are 1080×1350, stories 1080×1920.
 4. Show the owner the design and the full post. **Nothing is published before the word «موافق».**
-5. Schedule on Instagram + TikTok via Metricool (brand `cars__fs`, blogId 7783138, timezone Asia/Kuwait). TikTok title = first line of the caption.
+5. Schedule on Instagram + TikTok via Metricool (brand `cars__fs`, blogId 7998955, timezone Asia/Kuwait). TikTok title = first line of the caption.
    Instagram story works via Metricool; TikTok story and Snapchat are manual.
 6. After Metricool has taken its copy, delete the uploaded images from this repo.
 
