@@ -106,6 +106,8 @@
     document.querySelectorAll('[data-k]').forEach(el => el.textContent = d[el.dataset.k] ?? '');
     // trim (e.g. F SPORT) only shows when it was given
     document.querySelector('.title .trim').style.display = d.trim ? '' : 'none';
+    // تباعد الحروف يقطّع الكلام العربي، فنلغيه إذا الفئة بالعربي
+    if (/[\u0600-\u06FF]/.test(d.trim || '')) document.querySelector('.title .trim').style.letterSpacing = '0';
     const img = document.getElementById('photo'), bg = document.getElementById('photoBg');
     img.style.setProperty('--pos', d.photoPosition || 'center');
     img.style.setProperty('--fit', d.photoFit || 'contain');   // "cover" fills the box (may crop edges)
