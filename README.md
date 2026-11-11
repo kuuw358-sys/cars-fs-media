@@ -1,6 +1,8 @@
 # cars-fs-media
 
-**Approved template: `template/post.html` (1080×1350).** The other templates are earlier drafts.
+**Approved template: `template/post.html` (1080×1350).** The other templates (square, v3) are earlier drafts; do not use them. Full rules are in `CLAUDE.md`.
+
+- Write the brand in Arabic (e.g. «لكزس»).
 
 Rules for every car:
 - Always write the brand.
