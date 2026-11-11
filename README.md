@@ -23,7 +23,7 @@ Instagram post template for CARS FS listings (1080×1350, 4:5).
    ```
    node render.js cars/<car>.json
    ```
-   The image is written to `output/<car>.png`.
+   The image is written to `output/<car>.jpg` (JPEG, quality 85).
 
 Optional JSON fields:
 - `"photoFit": "cover"` fills the box completely, but may crop the edges of the photo.

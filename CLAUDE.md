@@ -4,7 +4,7 @@ Instagram/TikTok account **cars__fs** (Kuwait used-car listings). Always reply i
 The owner's workflow: they send car photos + text here, and Claude does everything else. Their only steps are sending and saying "موافق".
 
 ## Approved template (the only one)
-- **`template/post.html`, 1080×1350 (4:5)**, rendered with `node render.js cars/<car>.json` → `output/<car>.png`. Example: `cars/lexus-ux200.json`.
+- **`template/post.html`, 1080×1350 (4:5)**, rendered with `node render.js cars/<car>.json` → `output/<car>.jpg`. Example: `cars/lexus-ux200.json`.
 - Layout: brand / model / trim top-left, «للبيع» badge top-right, car photo in a rounded box, one row of 4 fields with icons (موديل، العداد، الصيانة، الفحص), then phone pill and price pill («السعر»).
 - **Brand is written in Arabic** (e.g. «لكزس», not "Lexus"). Model stays as written (e.g. "UX 200").
 - Write the trim only if it is in the car's text; otherwise leave it out of the JSON.
@@ -33,6 +33,7 @@ The owner's workflow: they send car photos + text here, and Claude does everythi
 - Metricool here cannot link Google Drive, so images are uploaded **temporarily** to this public repo for Metricool to fetch, then deleted.
 - GitHub's Acceptable Use Policy (sections 9 and 10) frowns on accounts that are mainly advertising or used as an image host. Keep it light: one push per car, delete images after scheduling, no other ads in the repo.
 - Metricool free plan: 20 posts a month. Warn the owner when close.
+- **All published images are JPG at quality 85** (about 0.3 MB instead of 1.3 MB as PNG): `render.js` writes `output/<car>.jpg`, and the extra original photos are resized to 1080×1350 and saved as JPG 85 too. Never upload PNG.
 
 ## Repo and backup rules
 - Owner's standing order (2026-11-11): **merge every change into `main` right away, without asking.** Work on the branch, push it, then fast-forward `main` to it.
