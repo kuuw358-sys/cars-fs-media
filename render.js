@@ -1,5 +1,5 @@
 // Usage: node render.js cars/lexus-ux200.json [more.json ...]
-// Renders each car JSON into output/<name>.jpg (post.html: 1080x1350, post-square.html: 1254x1254).
+// Renders each car JSON into output/<name>.jpg (JPEG, quality 85), using template/post.html at 1080x1350.
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
@@ -13,12 +13,12 @@ const path = require('path');
   for (const f of files) {
     const data = JSON.parse(fs.readFileSync(f, 'utf8'));
     const tpl = data.template || 'post.html';
-    const size = data.size ? { width: data.size[0], height: data.size[1] } : tpl === 'post-square.html' ? { width: 1254, height: 1254 } : { width: 1080, height: 1350 };
+    const size = data.size ? { width: data.size[0], height: data.size[1] } : { width: 1080, height: 1350 };
     await page.setViewportSize(size);
     await page.goto('file://' + path.join(__dirname, 'template', tpl));
     await page.evaluate((d) => window.fill(d), data);
-    const out = path.join(__dirname, 'output', path.basename(f, '.json') + '.jpg');   // JPEG: TikTok rejects PNG
-    await page.screenshot({ path: out, type: 'jpeg', quality: 95 });
+    const out = path.join(__dirname, 'output', path.basename(f, '.json') + '.jpg');
+    await page.screenshot({ path: out, type: 'jpeg', quality: 85 });
     console.log('wrote', out);
   }
   await browser.close();

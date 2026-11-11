@@ -1,42 +1,44 @@
-# CARS FS: instructions for Claude (read every session)
+# CARS FS: تعليمات Claude (تنقرا كل جلسة)
 
-Instagram/TikTok account **cars__fs** (Kuwait used-car listings). Always reply in **Gulf Arabic**, short and mobile-friendly.
-The owner's workflow: they send car photos + text here, and Claude does everything else. Their only steps are sending and saying "موافق".
+حساب انستقرام وتيك توك **cars__fs**، لإعلانات السيارات المستعملة في الكويت. الرد دايماً **باللهجة الخليجية**، قصير ومناسب للجوال.
+طريقة صاحب الحساب: يرسل صور السيارة والكلام هني، و Claude يسوي كل الباقي. شغله بس إنه يرسل ويقول «موافق».
 
-## Approved template (the only one)
-- **`template/post.html`, 1080×1350 (4:5)**, rendered with `node render.js cars/<car>.json` → `output/<car>.jpg` (always JPEG: TikTok rejects PNG). Example: `cars/lexus-ux200.json`.
-- Layout: brand / model / trim top-left, «للبيع» badge top-right, car photo in a rounded box, one row of 4 fields with icons (موديل، العداد، الصيانة، الفحص), then phone pill and price pill («السعر»).
-- **Brand is written in Arabic** (e.g. «لكزس», not "Lexus"). Model stays as written (e.g. "UX 200").
-- Write the trim only if it is in the car's text; otherwise leave it out of the JSON.
-- The 4 fields come from the post text. If there is no price, the price pill says «اتصل للسعر».
-- Other templates and branches (v3, v7 "white", `templates/` folder) are **old drafts. Never use them.**
+## القالب المعتمد (الوحيد)
+- **`template/post.html` بمقاس 1080×1350 (4:5)**، ويترسم بـ `node render.js cars/<car>.json`، والناتج `output/<car>.jpg`. المثال: `cars/lexus-ux200.json`.
+- الترتيب: الماركة والموديل والفئة فوق يسار، و«للبيع» فوق يمين، وصورة السيارة داخل مربع بزوايا دائرية، وصف فيه 4 خانات بأيقونات (موديل، العداد، الصيانة، الفحص)، وتحت زر الرقم وزر السعر («السعر»).
+- **الماركة تنكتب بالعربي** (مثل «لكزس» مو "Lexus"). الموديل ينكتب مثل ما هو (مثل "UX 200").
+- الفئة (trim) تنكتب بس إذا مذكورة في كلام السيارة، وإذا مو مذكورة ما تنحط في ملف JSON.
+- الخانات الأربع تنأخذ من نص البوست. وإذا ما فيه سعر، زر السعر يكون فيه «اتصل للسعر».
+- ما فيه قالب ثاني. القوالب القديمة (المربع، v3، v7 الأبيض) انمسحت من المستودع في 2026-11-11.
 
-## Steps for each car
-1. Check the photos are original, with no AI edits to the car or background. If they are edited, tell the owner and stop until originals arrive.
-2. Cover the number plate with the CARS FS sticker at the plate's angle (`tools/plate/`):
+## خطوات كل سيارة
+1. نتأكد إن الصور أصلية، بدون أي تعديل ذكاء اصطناعي على السيارة أو الخلفية. إذا معدّلة، ننبه صاحب الحساب ونوقف لين توصل الأصلية.
+2. **نغطي اللوحة في كل صورة تبين فيها**، مو بس صورة القالب، بملصق CARS FS بنفس زاوية اللوحة (`tools/plate/`):
    `cd tools/plate && node mksticker.js W H && python3 plate.py in.jpg out.jpg TLx,TLy TRx,TRy BRx,BRy BLx,BLy`
-3. Put the **first photo the owner sends** in the template (always, not the "clearest"), untouched, filling the full photo box: use `"photoFit": "cover"` (never a blurred side fill, never a shrunken box). All other photos go in the post as originals. Post images are 1080×1350, stories 1080×1920.
-4. Show the owner the design and the full post. **Nothing is published before the word «موافق».**
-5. Schedule on Instagram + TikTok via Metricool (brand `cars__fs`, blogId 7998955, timezone Asia/Kuwait). TikTok title = first line of the caption.
-   Instagram story works via Metricool; TikTok story and Snapchat are manual.
-6. After Metricool has taken its copy, delete the uploaded images from this repo.
+3. **أول صورة يرسلها صاحب الحساب** هي اللي تنحط في القالب (دايماً، مو "الأوضح")، بدون أي تعديل، وتعبي مربع الصورة كامل: نستخدم `"photoFit": "cover"` (لا تعبئة مغبشة على الجوانب، ولا مربع مصغّر). باقي الصور تنزل في البوست أصلية (بدون أي تعديل غير تغطية اللوحة). صور البوست 1080×1350، والستوري 1080×1920.
+4. نعرض التصميم والبوست كامل على صاحب الحساب. **ما ينشر أي شي قبل كلمة «موافق».**
+5. نجدول على انستقرام وتيك توك عن طريق Metricool (الحساب `cars__fs`، blogId 7998955، التوقيت Asia/Kuwait). عنوان تيك توك = أول سطر من الكابشن.
+   ستوري انستقرام ينفع عن طريق Metricool، وستوري تيك توك وسناب يدوي.
+6. بعد ما Metricool ياخذ نسخته، نمسح الصور المرفوعة من المستودع.
 
-## Content rules
-- The caption is the owner's text **copied word for word**. If no text is sent, write nothing of our own.
-- Template text goes on the template only.
-- Remove any other dealer's name or logo from the text (e.g. "PANDA CAR بيع.. شراء.. تثمين").
-- Sold car: red ribbon «مبـاع ✔» over the phone number on the same image, posted as a story and added to the «تم البيع» highlight.
-- Ad offer: 2 KD per car until sold; two cars for 4 KD and the third free. Ads WhatsApp: 66071514.
-- Tuesday comparison posts: see `tuesday-plan.md`.
+## قواعد المحتوى
+- الكابشن هو كلام صاحب الإعلان **حرفياً**. إذا ما أرسل كلام، ما نكتب شي من عندنا.
+- كلام القالب ينكتب على القالب بس.
+- أي اسم أو شعار لمعرض ثاني في الكلام ينشال (مثل "PANDA CAR بيع.. شراء.. تثمين").
+- السيارة المباعة: شريط أحمر «مبـاع ✔» فوق رقم التواصل في نفس صورة الإعلان، وتنزل ستوري، وتنضاف لهايلايت «تم البيع».
+- عرض الإعلان: 2 دينار للسيارة لين تنباع، وسيارتين بـ 4 دينار والثالثة مجاناً. واتساب الإعلانات: 66071514.
+- بوستات مقارنة الثلاثاء: شوف `tuesday-plan.md`.
 
-## Hosting and limits
-- Metricool here cannot link Google Drive, so images are uploaded **temporarily** to this public repo for Metricool to fetch, then deleted.
-- GitHub's Acceptable Use Policy (sections 9 and 10) frowns on accounts that are mainly advertising or used as an image host. Keep it light: one push per car, delete images after scheduling, no other ads in the repo.
-- Metricool free plan: 20 posts a month. Warn the owner when close.
+## الاستضافة والحدود
+- Metricool هني ما يقدر يربط Google Drive، فالصور ترتفع **مؤقتاً** على هالمستودع العام عشان يسحبها Metricool، وبعدها تنمسح.
+- سياسة الاستخدام في GitHub (البند 9 والبند 10) ما تحب الحسابات اللي أغلبها إعلانات أو تُستخدم كاستضافة صور. عشان كذا نخففها: رفعة وحدة لكل سيارة، ونمسح الصور بعد الجدولة، وما نحط أي إعلانات ثانية في المستودع.
+- خطة Metricool المجانية: 20 بوست بالشهر. ننبه صاحب الحساب إذا قرّب يخلص.
+- **كل الصور المنشورة JPG بجودة 85** (تقريباً 0.3 ميقا بدل 1.3 ميقا PNG): `render.js` يطلّع `output/<car>.jpg`، والصور الأصلية الباقية تتصغر لـ 1080×1350 وتنحفظ JPG 85 بعد. ممنوع رفع PNG.
 
-## Repo and backup rules
-- Owner's standing order (2026-11-11): **merge every change into `main` right away, without asking.** Work on the branch, push it, then fast-forward `main` to it.
-- **Owner's standing order: every change of any kind is saved to BOTH GitHub (commit + push right away) and Drive (a new backup copy right away).**
-- Google Drive is normally **disconnected**. After any important change (rules, template or tools), remind the owner:
-  «فيه تعديل، اربطني في Drive عشان نحفظ النسخة». Then save a dated copy (date + time) in the Drive folder «CARS FS - القوالب (آخر تعديل)», keep the latest two, and move older copies to the Drive trash.
-  Name the newest «… ← الأحدث» and rename the one before it «… ← السابق», so the owner can tell them apart. Never overwrite the same file.
+## قواعد المستودع والنسخ الاحتياطي
+- أمر صاحب الحساب الدائم (2026-11-11): **أي تعديل يندمج في `main` على طول، بدون سؤال.** نشتغل على الفرع، نرفعه، وبعدين نقدّم `main` له.
+- **أمر صاحب الحساب الدائم: أي تعديل، مهما كان، ينحفظ في المكانين: GitHub (commit و push على طول) و Drive (نسخة احتياطية جديدة على طول).**
+- **كل شي ينكتب بالعربي**: القواعد والتعليمات والملفات والرسائل.
+- **أي قاعدة أو تعليمات تتحدث، القديمة تنمسح، في كل مكان.** في الملفات: النص القديم ينشال وينحط الجديد مكانه (ما نخلي نسختين من نفس القاعدة). وأي ملف أو قالب قديم انحل محله جديد ينمسح من المستودع ومن `main`. في Drive: نسخة وحدة بس، الأحدث، والقديمة تروح لسلة المهملات على طول.
+- Google Drive عادةً **مفصول**. بعد أي تعديل مهم (القواعد أو القالب أو الأدوات)، نذكّر صاحب الحساب:
+  «فيه تعديل، اربطني في Drive عشان نحفظ النسخة». بعدها نحفظ نسخة جديدة بالتاريخ والساعة في مجلد Drive «CARS FS - القوالب (آخر تعديل)» واسمها ينتهي بـ «← الأحدث»، وننقل النسخة القديمة لسلة المهملات. ما نكتب فوق نفس الملف.
