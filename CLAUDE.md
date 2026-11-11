@@ -35,7 +35,7 @@ The owner's workflow: they send car photos + text here, and Claude does everythi
 - Metricool free plan: 20 posts a month. Warn the owner when close.
 
 ## Repo and backup rules
-- Never merge anything into `main` until the owner says «ادمج». Work on a branch first.
+- Owner's standing order (2026-11-11): **merge every change into `main` right away, without asking.** Work on the branch, push it, then fast-forward `main` to it.
 - **Owner's standing order: every change of any kind is saved to BOTH GitHub (commit + push right away) and Drive (a new backup copy right away).**
 - Google Drive is normally **disconnected**. After any important change (rules, template or tools), remind the owner:
   «فيه تعديل، اربطني في Drive عشان نحفظ النسخة». Then save a dated copy (date + time) in the Drive folder «CARS FS - القوالب (آخر تعديل)», keep the latest two, and move older copies to the Drive trash.
