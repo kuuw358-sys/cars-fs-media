@@ -3,7 +3,7 @@
   "model": "HD2500",
   "badge": "للبيع",
   "photo": "photos/gmc-sierra-2500hd-front.jpg",
-  "photoPosition": "center 62%",
+  "photoPosition": "center 52%",
   "year": "2012",
   "mileage": "327 ألف كم تقريباً",
   "service": "—",
@@ -11,5 +11,5 @@
   "price": "1,700",
   "currency": "K.D",
   "phone": "50119997",
-  "photoFit": "fit"
+  "photoFit": "cover"
 }
