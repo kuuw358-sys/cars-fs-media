@@ -1,0 +1,16 @@
+{
+  "brand": "شفروليه",
+  "model": "SILVERADO",
+  "trim": "LT",
+  "badge": "للبيع",
+  "photo": "photos/silverado-2008-front.jpg",
+  "photoFit": "cover",
+  "photoPosition": "center 97%",
+  "year": "2008",
+  "mileage": "328 ألف كم",
+  "service": "كل شي شغال",
+  "inspection": "شرط الفحص",
+  "price": "1,350",
+  "currency": "K.D",
+  "phone": "96691597"
+}
