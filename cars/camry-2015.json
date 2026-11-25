@@ -1,0 +1,16 @@
+{
+  "brand": "تويوتا",
+  "model": "CAMRY",
+  "trim": "GL",
+  "badge": "للبيع",
+  "photo": "photos/camry-2015-front.jpg",
+  "photoFit": "cover",
+  "photoPosition": "center 95%",
+  "year": "2015",
+  "mileage": "—",
+  "service": "صبغ الوكالة",
+  "inspection": "محركات جيدة",
+  "price": "1,350",
+  "currency": "K.D",
+  "phone": "96691597"
+}
